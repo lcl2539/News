@@ -11,6 +11,7 @@ import JXSegmentedView
 
 class LRecommendVC: QMUICommonViewController, JXSegmentedViewDelegate, UISearchBarDelegate, JXSegmentedListContainerViewDataSource {
 
+
     var segmentedView : JXSegmentedView!
     var segmentedTitles : [String]!
     var segmentedDataSource : JXSegmentedTitleDataSource!
@@ -25,16 +26,27 @@ class LRecommendVC: QMUICommonViewController, JXSegmentedViewDelegate, UISearchB
         indicator.image = #imageLiteral(resourceName: "icon_pay_sel")
         indicator.indicatorWidth = 10
         indicator.indicatorHeight = 10
-        segmentedView?.indicators = [indicator]
-        segmentedView?.delegate = self
-        segmentedView?.contentEdgeInsetLeft = 15;
-        segmentedView?.contentEdgeInsetRight = 15;
+        segmentedView.indicators = [indicator]
+        segmentedView.delegate = self
+        segmentedView.contentEdgeInsetLeft = 15;
+        segmentedView.contentEdgeInsetRight = 15;
         
         listContainerView = JXSegmentedListContainerView(dataSource: self)
         segmentedView.listContainer = listContainerView
         
         view.addSubview(segmentedView)
         view.addSubview(self.listContainerView)
+        
+        segmentedView.snp.makeConstraints { (make) in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(view.snp_topMargin)
+            make.height.equalTo(50)
+        }
+        listContainerView.snp.makeConstraints { (make) in
+            make.leading.trailing.equalToSuperview()
+            make.bottom.equalTo(view.snp_bottomMargin)
+            make.top.equalTo(segmentedView.snp_bottomMargin)
+        }
     }
     
     override func setupNavigationItems() {
@@ -70,11 +82,6 @@ class LRecommendVC: QMUICommonViewController, JXSegmentedViewDelegate, UISearchB
         segmentedView.dataSource = segmentedDataSource
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        segmentedView.frame = .init(x: 0, y: Tool.naviagtionBarHeight(self), width: UIScreen.main.bounds.width, height: 60)
-    }
-    
     
 }
 
@@ -84,6 +91,15 @@ extension LRecommendVC {
         
         return false
     }
-    
+
+    func numberOfLists(in listContainerView: JXSegmentedListContainerView) -> Int{
+        return self.segmentedTitles.count
+    }
+
+    func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
+        let containerView = LRecommendListVC()
+        return containerView
+        
+    }
     
 }

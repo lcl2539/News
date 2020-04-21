@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		36C63BBA244EF5F5006B69B9 /* LRecommendListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRecommendListVC.swift; sourceTree = "<group>"; };
 		36C63BBC244EF95F006B69B9 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		36C63BBF244EFA9D006B69B9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = News/Main/ViewController.m; sourceTree = "<group>"; };
 		36E4FAA0244E914000703322 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36E4FAA3244E914000703322 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36E4FAAA244E914000703322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,7 +83,6 @@
 		36E4FA97244E914000703322 = {
 			isa = PBXGroup;
 			children = (
-				36C63BBF244EFA9D006B69B9 /* ViewController.m */,
 				36E4FAA2244E914000703322 /* News */,
 				36E4FABC244E914300703322 /* NewsUITests */,
 				36E4FAA1244E914000703322 /* Products */,

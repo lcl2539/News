@@ -9,18 +9,14 @@
 import UIKit
 import JXSegmentedView
 
-class LRecommendListVC: QMUICommonViewController ,JXSegmentedListContainerViewListDelegate{
+class LRecommendListVC: UIViewController ,JXSegmentedListContainerViewListDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let colorNumber : CGFloat = CGFloat(arc4random_uniform(255))
-        view.backgroundColor = UIColor.init(red: colorNumber, green: colorNumber, blue: colorNumber, alpha: 1)
-    }
-
-    override func initSubviews() {
-        super.initSubviews()
         
-    }
+        
+    }	
+
     
     func listView() -> UIView {
         return view

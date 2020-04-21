@@ -9,7 +9,7 @@
 import UIKit
 import JXSegmentedView
 
-class LRecommendVC: QMUICommonViewController, JXSegmentedViewDelegate, UISearchBarDelegate, JXSegmentedListContainerViewDataSource {
+class LRecommendVC: QMUICommonViewController{
 
 
     var segmentedView : JXSegmentedView!
@@ -32,6 +32,7 @@ class LRecommendVC: QMUICommonViewController, JXSegmentedViewDelegate, UISearchB
         segmentedView.contentEdgeInsetRight = 15;
         
         listContainerView = JXSegmentedListContainerView(dataSource: self)
+        listContainerView.layer.isOpaque = true
         segmentedView.listContainer = listContainerView
         
         view.addSubview(segmentedView)
@@ -45,8 +46,9 @@ class LRecommendVC: QMUICommonViewController, JXSegmentedViewDelegate, UISearchB
         listContainerView.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
             make.bottom.equalTo(view.snp_bottomMargin)
-            make.top.equalTo(segmentedView.snp_bottomMargin)
+            make.top.equalTo(segmentedView).offset(50)
         }
+        
     }
     
     override func setupNavigationItems() {
@@ -80,15 +82,17 @@ class LRecommendVC: QMUICommonViewController, JXSegmentedViewDelegate, UISearchB
         segmentedDataSource.titleSelectedZoomScale = 1.2
 
         segmentedView.dataSource = segmentedDataSource
+        segmentedView.defaultSelectedIndex = 1
+        segmentedView.reloadData()
+        listContainerView.reloadData()
     }
     
     
 }
 
 // MARK: - Delegate
-extension LRecommendVC {
+extension LRecommendVC : JXSegmentedViewDelegate, UISearchBarDelegate, JXSegmentedListContainerViewDataSource{
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        
         return false
     }
 
@@ -98,6 +102,7 @@ extension LRecommendVC {
 
     func listContainerView(_ listContainerView: JXSegmentedListContainerView, initListAt index: Int) -> JXSegmentedListContainerViewListDelegate {
         let containerView = LRecommendListVC()
+        self.addChild(containerView)
         return containerView
         
     }

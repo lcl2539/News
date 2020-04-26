@@ -9,12 +9,15 @@
 import UIKit
 import JXSegmentedView
 
-class LRecommendListVC: UIViewController ,JXSegmentedListContainerViewListDelegate{
+class LRecommendListVC: QMUICommonViewController ,JXSegmentedListContainerViewListDelegate{
 
+    var collectionView : UICollectionView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let cell = UICollectionViewCell()
     }	
 
     

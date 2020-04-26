@@ -9,9 +9,9 @@ target 'News' do
   pod 'SnapKit'
   pod 'IGListKit'
   pod 'JXSegmentedView'
+  pod 'MJRefresh'
+  pod 'MBProgressHUD'
+  pod 'SkeletonView'
 
-  target 'NewsUITests' do
-    # Pods for testing
-  end
 
 end

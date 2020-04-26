@@ -2,5 +2,8 @@ ${PODS_ROOT}/Target Support Files/Pods-News/Pods-News-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/IGListDiffKit/IGListDiffKit.framework
 ${BUILT_PRODUCTS_DIR}/IGListKit/IGListKit.framework
 ${BUILT_PRODUCTS_DIR}/JXSegmentedView/JXSegmentedView.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/QMUIKit/QMUIKit.framework
+${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework
 ${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework

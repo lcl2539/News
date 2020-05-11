@@ -4,3 +4,4 @@
 
 
 #import <QMUIKit/QMUIKit.h>
+#import "NSString+AESEncryty.h"

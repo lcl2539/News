@@ -12,6 +12,8 @@ target 'News' do
   pod 'MJRefresh'
   pod 'MBProgressHUD'
   pod 'SkeletonView'
+  pod 'SDWebImage'
+  pod 'Alamofire'
 
 
 end

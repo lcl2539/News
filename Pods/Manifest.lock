@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.1.0)
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
@@ -308,39 +309,48 @@ PODS:
     - QMUIKit/QMUICore
     - QMUIKit/QMUILog
   - QMUIKit/QMUIWeakObjectContainer (4.1.1)
+  - SDWebImage (5.7.3):
+    - SDWebImage/Core (= 5.7.3)
+  - SDWebImage/Core (5.7.3)
   - SkeletonView (1.8.7)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - Alamofire
   - IGListKit
   - JXSegmentedView
   - MBProgressHUD
   - MJRefresh
   - QMUIKit
+  - SDWebImage
   - SkeletonView
   - SnapKit
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - IGListDiffKit
     - IGListKit
     - JXSegmentedView
     - MBProgressHUD
     - MJRefresh
     - QMUIKit
+    - SDWebImage
     - SkeletonView
     - SnapKit
 
 SPEC CHECKSUMS:
+  Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   JXSegmentedView: ceb6fb3a12716408bcd5c4210b93d947d079de25
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 3153c59a363159092c08b2177ec3a7d09f90bfaf
   QMUIKit: 5a1a39630f404bd34824d0769ffac9531744602c
+  SDWebImage: 97351f6582ceca541ea294ba66a1fcb342a331c2
   SkeletonView: ba5370f41280b2f0a76918bb143c1294232bb4f4
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 4ef3013188b80ae17f4a073088f5ba8075b20387
+PODFILE CHECKSUM: b0b40175c75c3cacb667f4b91f7173545f54a7ab
 
 COCOAPODS: 1.9.1

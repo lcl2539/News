@@ -19,10 +19,10 @@ class LTabBarVC: QMUITabBarViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let commondItem = ItemInfo.init(name: "推荐", image: #imageLiteral(resourceName: "icon_home_remmd_1"), controllerClass: LRecommendVC.classForCoder())
-        let newsItem = ItemInfo.init(name: "资讯", image: #imageLiteral(resourceName: "icon_home_news_1"), controllerClass: QMUICommonViewController.classForCoder())
-        let communityItem = ItemInfo.init(name: "社区", image: #imageLiteral(resourceName: "icon_home_comty_1"), controllerClass: QMUICommonViewController.classForCoder())
-        let videoItem = ItemInfo.init(name: "视频", image: #imageLiteral(resourceName: "icon_home_video_1"), controllerClass: QMUICommonViewController.classForCoder())
-        let culturalCreationItem = ItemInfo.init(name: "文创", image: #imageLiteral(resourceName: "icon_home_creat_1"), controllerClass: QMUICommonViewController.classForCoder())
+        let newsItem = ItemInfo.init(name: "资讯", image: #imageLiteral(resourceName: "icon_home_news_1"), controllerClass: LNewsVC.classForCoder())
+        let communityItem = ItemInfo.init(name: "社区", image: #imageLiteral(resourceName: "icon_home_comty_1"), controllerClass: LCommunityVC.classForCoder())
+        let videoItem = ItemInfo.init(name : "视频", image : #imageLiteral(resourceName : "icon_home_video_1"), controllerClass : LVideoVC.classForCoder())
+        let culturalCreationItem = ItemInfo.init(name: "文创", image: #imageLiteral(resourceName: "icon_home_creat_1"), controllerClass: LCulturalCreationVC.classForCoder())
         
         let itemInfos : [ItemInfo] = [commondItem,newsItem,communityItem,videoItem,culturalCreationItem]
         var viewControllers : [QMUINavigationController] = [];
@@ -31,7 +31,6 @@ class LTabBarVC: QMUITabBarViewController {
             let vc = creatSubViewController(item: item,idx: index)
             viewControllers.append(vc)
         }
-        
         self.viewControllers = viewControllers
     }
     
@@ -46,6 +45,7 @@ class LTabBarVC: QMUITabBarViewController {
         vcTabBarItem.selectedImage = item.image
         
         let navigationVC = QMUINavigationController.init(rootViewController: vc);
+        navigationVC.navigationBar.isTranslucent = false
         navigationVC.tabBarItem = vcTabBarItem;
         
         return navigationVC

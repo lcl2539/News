@@ -9,6 +9,7 @@
 import UIKit
 import JXSegmentedView
 
+
 class LRecommendListVC: QMUICommonViewController ,JXSegmentedListContainerViewListDelegate{
 
     var collectionView : UICollectionView!
@@ -17,7 +18,6 @@ class LRecommendListVC: QMUICommonViewController ,JXSegmentedListContainerViewLi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cell = UICollectionViewCell()
     }	
 
     

@@ -49,6 +49,8 @@ class LRecommendVC: QMUICommonViewController{
             make.top.equalTo(segmentedView).offset(50)
         }
         
+        
+        
     }
     
     override func setupNavigationItems() {
@@ -58,7 +60,7 @@ class LRecommendVC: QMUICommonViewController{
         searchBar.delegate = self
         
         let leftItem = UIBarButtonItem.qmui_item(with: #imageLiteral(resourceName: "icon_recom_logo"), target: nil, action: nil);
-        let rightItem = UIBarButtonItem.qmui_item(with: #imageLiteral(resourceName: "icon_recom_nol_head"), target: nil, action: nil);
+        let rightItem = UIBarButtonItem.qmui_item(with: #imageLiteral(resourceName: "icon_recom_nol_head"), target: self, action: #selector(showUserInfo));
         
         navigationItem.titleView = searchBar
         navigationItem.leftBarButtonItem = leftItem
@@ -87,6 +89,10 @@ class LRecommendVC: QMUICommonViewController{
         listContainerView.reloadData()
     }
     
+    @objc func showUserInfo() {
+        let mineVC = LMineVC.init(nibName: "LMineVC", bundle: .main)
+        navigationController?.pushViewController(mineVC, animated: true)
+    }
     
 }
 

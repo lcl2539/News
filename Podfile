@@ -14,6 +14,7 @@ target 'News' do
   pod 'SkeletonView'
   pod 'SDWebImage'
   pod 'Alamofire'
+  pod 'ReactiveCocoa'
 
 
 end
